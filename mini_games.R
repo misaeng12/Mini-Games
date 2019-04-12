@@ -4,17 +4,17 @@ library(gWidgets)
 library(gWidgetsRGtk2)
 
 
-win<-gwindow("Mini games")
-grp<-ggroup(horizontal=FALSE, cont=win)
-tmp<-gframe("Choose a game.", container=grp)
+win <- gwindow("Mini games")
+grp <- ggroup(horizontal=FALSE, cont=win)
+tmp <- gframe("Choose a game.", container=grp)
 
 
 
 ##########---------- 1. TicTacToe ----------##########
 
-button1<-gbutton("TicTacToe", handler=function(h,...){
+button1 <- gbutton("TicTacToe", handler=function(h,...){
 
- win1<-gwindow("TicTacToe", width=1000)
+ win1 <- gwindow("TicTacToe", width=1000)
 
  reset <-function(){
  X<<-matrix(0,3,3)
@@ -26,17 +26,17 @@ button1<-gbutton("TicTacToe", handler=function(h,...){
   box(which = "figure", lty = "solid",col="red")
   text(2.25,2.95,"O",col="black",cex=4)
  }
- draw2<- function() {
+ draw2 <- function() {
   plot<-plot(1, type='n', xlab='', ylab='',xaxt='n', yaxt='n',pos=0,bty='n',xlim=c(0,6),ylim=c(0,6))
   box(which = "figure", lty = "solid",col="red")
   text(2.25,2.95,"X",col="black",cex=4)
  }
- draw3<- function() {
+ draw3 <- function() {
   plot<-plot(1, type='n', xlab='', ylab='',xaxt='n', yaxt='n',pos=0,bty='n',xlim=c(0,6),ylim=c(0,6))
   box(which = "figure", lty = "solid",col="red")
   text(2.25,2.95,"",col="black",cex=4)
  }
- draw<- function(i,j) {
+ draw <- function(i,j) {
   par(mfrow=c(3,3),bg="lightgreen")
   for (i in 1:3){
   for (j in 1:3){
@@ -50,7 +50,7 @@ button1<-gbutton("TicTacToe", handler=function(h,...){
    }
   }
  }
- firstdraw<- function(){
+ firstdraw <- function(){
   par(mfrow=c(3,3),bg="lightgreen")
   k<-0
  repeat{
@@ -66,7 +66,7 @@ button1<-gbutton("TicTacToe", handler=function(h,...){
  b<<-as.numeric(strsplit(x,split="")[[1]][2])
  }
 
- tictactoe1<- function(i,j){
+ tictactoe1 <- function(i,j){
  if (X[i,j]!=0){
   gmessage("이 자리는 이미 플레이한 자리임")
  }
@@ -86,7 +86,7 @@ button1<-gbutton("TicTacToe", handler=function(h,...){
  return(X)
  }
 
- tictactoe2<- function(i,j){
+ tictactoe2 <- function(i,j){
  if (X[i,j]!=0){
   gmessage("이 자리는 이미 플레이한 자리임")
  }
@@ -106,7 +106,7 @@ button1<-gbutton("TicTacToe", handler=function(h,...){
  return(X)
  }
 
- Aplay<-function(){
+ Aplay <- function(){
   svalue(type1)
   num(svalue(type1))
   tictactoe1(a,b)
@@ -116,7 +116,7 @@ button1<-gbutton("TicTacToe", handler=function(h,...){
   svalue(type2) <<- ""
  }
 
- Bplay<-function(){
+ Bplay <- function(){
   svalue(type2)
   num(svalue(type2))
   tictactoe2(a,b)
@@ -126,7 +126,7 @@ button1<-gbutton("TicTacToe", handler=function(h,...){
   svalue(type1) <<- ""
  }
 
- group<- ggroup(horizontal=FALSE, cont=win1)
+ group <- ggroup(horizontal=FALSE, cont=win1)
   tmp1<<-gframe("Game", horizontal=FALSE,container=group ,cont=win1,expand=TRUE)
   group2<-ggroup(cont=tmp1)
   tframe<<-gframe("Type in i and j", container=group2, cont=tmp1, expand=TRUE)
@@ -147,9 +147,9 @@ button1<-gbutton("TicTacToe", handler=function(h,...){
                      
 ##########---------- 2. HangMan ----------##########
                      
-button2<-gbutton("HangMan", handler=function(h,...){
+button2 <- gbutton("HangMan", handler=function(h,...){
 
- win2<-gwindow("HangMan")
+ win2 <- gwindow("HangMan")
 
  quiz <- function(x) {
   x1<<-unlist(strsplit(toupper(x),""))
@@ -248,7 +248,7 @@ button2<-gbutton("HangMan", handler=function(h,...){
                      
 ##########---------- 3. Matching ----------##########
                      
-button3<-gbutton("Matching", handler=function(h,...){
+button3 <- gbutton("Matching", handler=function(h,...){
 
  win3<<-gwindow("Matching")
 
@@ -317,7 +317,7 @@ button3<-gbutton("Matching", handler=function(h,...){
    }
  }
 
- game<-function(h,...){
+ game <- function(h,...){
    a<<-svalue(card1)
    b<<-svalue(card2)
    x<-U[a]
