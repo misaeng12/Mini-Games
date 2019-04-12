@@ -1,5 +1,3 @@
-# “Mini games” R code
-
 install.packages("gWidgets")
 install.packages("gWidgetsRGtk2")
 library(gWidgets)
@@ -11,6 +9,7 @@ grp<-ggroup(horizontal=FALSE, cont=win)
 tmp<-gframe("Choose a game.", container=grp)
 
 
+##########---------- 1. TicTacToe ----------##########
 
 button1<-gbutton("TicTacToe", handler=function(h,...){
 
@@ -143,6 +142,8 @@ button1<-gbutton("TicTacToe", handler=function(h,...){
 
 
 
+##########---------- 2. HangMan ----------##########
+                     
 button2<-gbutton("HangMan", handler=function(h,...){
 
  win2<-gwindow("HangMan")
@@ -240,6 +241,8 @@ button2<-gbutton("HangMan", handler=function(h,...){
 
 
 
+##########---------- 3. Matching ----------##########
+                     
 button3<-gbutton("Matching", handler=function(h,...){
 
  win3<<-gwindow("Matching")
