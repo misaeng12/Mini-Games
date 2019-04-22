@@ -5,4 +5,4 @@
   + Hangman
   + Matching
 
-![](Hang_Man.jpg)
+![](hangman.jpg)
